@@ -6,20 +6,30 @@ export const setCurrentUser = user => {
 }
 
 export const login = credentials => {
-	console.log("credentails are: ", credentials)
+	console.log("credentials are: ", credentials)
+
 	return dispatch => {
 		return fetch("http://localhost:3005/api/v1/login", {
 			method: "POST",
-			header: {
+			headers: {
 				"Content-Type" : "application/json"
 			},
-			body: JSON.stringify()
+			body: JSON.stringify(credentials)
 		})
+			.then(res => res.json())
+			.then(user => {
+				if (user.error) {
+					alert(user.error)
+ 				} else {
+ 					dispatch(setCurrentUser(user))
+ 				}
+			})
+			.catch()
 	}
 }
 
 export const test = stuff => {
-	console.log("credentails are: ", stuff)
+	console.log("credentials are: ", stuff)
 	return dispatch => {
 		return fetch("http://localhost:3005/api/v1/users")
 		.then(res => res.json())
