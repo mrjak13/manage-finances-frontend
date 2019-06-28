@@ -18,6 +18,10 @@ const Login = ({ loginFormData, updateLoginForm, login, test }) => {
 	const handleSubmit = event => {
 		event.preventDefault()
 		login(loginFormData)
+		updateLoginForm({
+			email: "",
+			password: ""
+		})
 	}
 
 	return (
