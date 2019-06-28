@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Login from "./Login"
 import Logout from "./Logout"
+import Accounts from "../containers/Accounts"
 
 const NavBar = ({ currentUser }) => {
 
@@ -9,6 +10,7 @@ const NavBar = ({ currentUser }) => {
 		<div>
 			{currentUser ? `Welcome ${currentUser.name}` : ""}
 			{currentUser ? < Logout /> : < Login/>}
+			<Accounts />
 		</div>
 	)
 }
