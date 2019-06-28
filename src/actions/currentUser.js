@@ -36,7 +36,7 @@ export const getCurrentUser = () => {
 			method: "GET",
 			headers: {
 				"Content-Type" : "application/json"
-			},
+			}
 		})
 			.then(res => res.json())
 			.then(user => {
@@ -49,6 +49,21 @@ export const getCurrentUser = () => {
 			.catch()
 	}
 }
+
+export const logout = () => {
+	return dispatch => {	
+		dispatch(setCurrentUser(null))
+		return fetch("http://localhost:3005/api/v1/logout", {
+			credentials: "include",
+			method: "DELETE",
+			headers: {
+				"Content-Type" : "application/json"
+			}
+		})
+		.then()
+	}
+}
+
 
 export const test = stuff => {
 	console.log("credentials are: ", stuff)
