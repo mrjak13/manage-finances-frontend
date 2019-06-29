@@ -8,9 +8,9 @@ const NavBar = ({ currentUser }) => {
 
 	return (
 		<div>
-			{currentUser ? `Welcome ${currentUser.name}` : ""}
-			{currentUser ? < Logout /> : < Login/>}
-			<Accounts />
+			Welcome to managing your finances!
+			{ currentUser.data ? <Accounts /> : ""}
+			{ currentUser.data ? < Logout /> : < Login/>}
 		</div>
 	)
 }

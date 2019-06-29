@@ -52,7 +52,7 @@ export const getCurrentUser = () => {
 
 export const logout = () => {
 	return dispatch => {	
-		dispatch(setCurrentUser(null))
+		dispatch(setCurrentUser({}))
 		return fetch("http://localhost:3005/api/v1/logout", {
 			credentials: "include",
 			method: "DELETE",
