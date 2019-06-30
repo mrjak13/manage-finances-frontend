@@ -5,9 +5,6 @@ import Account from '../components/Account'
 
 class Accounts extends React.Component {
 
-	handleClick = event => {
-			this.props.setAccounts(this.props.currentUser.attributes.accounts)
-	}
 
 	componentDidMount() {
 		this.props.setAccounts(this.props.currentUser.attributes.accounts)
@@ -16,7 +13,6 @@ class Accounts extends React.Component {
 	render() {
 		return (
 			<div>
-
 				{ this.props.currentUser.attributes.accounts.map(account => <Account id={account.id} name={account.name} balance={account.balance}/>) }
 			</div>
 		)
