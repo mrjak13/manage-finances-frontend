@@ -2,7 +2,7 @@ export default (state = [], action) => {
 	switch (action.type) {
 		
 		case "GET_TRANSACTIONS":
-			return state
+			return action.transactions
 
 		default:
 			return state
