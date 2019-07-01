@@ -1,13 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { updateAccountForm } from '../actions/accountForm'
+import { createAccount } from '../actions/accounts'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 
-const AccountForm = (props) => {
+const AccountForm = ({ updateAccountForm, accountFormData, createAccount, currentUser }) => {
+
+	const handleInputChange = event => {
+		const { name, value } = event.target
+		const updatedFormInfo = {
+			...accountFormData,
+			[name]: value
+		}
+		updateAccountForm(updatedFormInfo)
+	}
 
 	const handleSubmit = event => {
 		event.preventDefault()
-		alert("Submitted Account Form")
+		createAccount(currentUser.data.id, accountFormData)
+		updateAccountForm({
+			name: "",
+			balance: ""
+		})
 	}
 
 	return(
@@ -15,12 +30,12 @@ const AccountForm = (props) => {
 			<br></br><h4>New Account</h4><br></br>
 			<Form.Group controlId="accountFormName">
 			  <Form.Label>Account Name</Form.Label>
-			  <Form.Control placeholder="Checking Account" />
+			  <Form.Control onChange={handleInputChange} name="name" placeholder="Checking Account" />
 			</Form.Group>
 
 			<Form.Group controlId="accountFormBalance">
 			  <Form.Label>Starting Balance</Form.Label>
-			  <Form.Control type="number" placeholder="10000" />
+			  <Form.Control type="number" step="0.01" onChange={handleInputChange} name="balance" placeholder="10000" />
 			</Form.Group>
 			<Button variant="primary" type="submit">
 			  Submit
@@ -29,4 +44,12 @@ const AccountForm = (props) => {
 	)
 }
 
-export default connect(null)(AccountForm)
+const mapStateToProps = state => {
+	return {
+		currentUser: state.currentUser,
+		accountFormData: state.accountForm
+
+	}
+}
+
+export default connect(mapStateToProps, { updateAccountForm, createAccount })(AccountForm)
