@@ -2,6 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar'
+import Main from './containers/Main'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 
@@ -13,7 +14,10 @@ class App extends React.Component {
 
   render(){
     return (
+      <div>
         <NavBar />
+        <Main />
+      </div>
     );
   }
 }
