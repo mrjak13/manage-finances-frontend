@@ -21,7 +21,7 @@ const AccountForm = ({ updateAccountForm, accountFormData, createAccount, curren
 		createAccount(currentUser.data.id, accountFormData)
 		updateAccountForm({
 			name: "",
-			balance: ""
+			balance: 0
 		})
 	}
 

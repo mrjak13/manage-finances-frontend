@@ -13,9 +13,10 @@ export const createAccount = (userId, account) => {
 			method: "POST",
 			headers: {
 				"Content-Type" : "application/json"
-			}
+			},
+			body: JSON.stringify(account)
 		})
 		.then(resp => resp.json())
-		.then(console.log("AFTER POST REQUEST"))
+		.then(console.log)
 	}
 }
