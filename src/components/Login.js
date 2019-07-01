@@ -2,9 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm'
 import { login }  from '../actions/currentUser'
-import { test }  from '../actions/currentUser'
 
-const Login = ({ loginFormData, updateLoginForm, login, test }) => {
+const Login = ({ loginFormData, updateLoginForm, login}) => {
 
 	const handleInputChange = event => {
 		const { name, value } = event.target
@@ -40,4 +39,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login, test })(Login)
+export default connect(mapStateToProps, { updateLoginForm, login })(Login)
