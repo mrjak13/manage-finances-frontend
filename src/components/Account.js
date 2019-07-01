@@ -1,13 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchTransactions } from '../actions/transactions'
+import Card from 'react-bootstrap/Card'
 
 const Account = ({ id, name, balance, fetchTransactions }) => {
 	return (
-		<div onClick={() => fetchTransactions(id)}>
-			<h3>{ name }</h3>
-			<p>Account id {id} Balance {balance}</p> 
-		</div>
+			<Card style={{ width: '18rem' }}>
+			  <Card.Body>
+			    <Card.Title>{ name }</Card.Title>
+			    <Card.Subtitle className="mb-2 text-muted">Account id {id} Balance {balance}</Card.Subtitle>
+			    {/*<Card.Text>
+			      Some quick example text to build on the card title and make up the bulk of
+			      the card's content.
+			    </Card.Text>*/}
+			    <Card.Link href="#" onClick={() => fetchTransactions(id)}>Get Transactions</Card.Link>
+			  </Card.Body>
+			</Card>
 	)
 }
 

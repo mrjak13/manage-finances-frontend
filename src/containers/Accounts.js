@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { setAccounts } from '../actions/accounts' 
 import Account from '../components/Account'
+import CardDeck from 'react-bootstrap/CardDeck'
 
 class Accounts extends React.Component {
 
@@ -12,9 +13,9 @@ class Accounts extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<CardDeck>
 				{ this.props.currentUser.attributes.accounts.map(account => <Account id={account.id} name={account.name} balance={account.balance}/>) }
-			</div>
+			</CardDeck>
 		)
 	}
 }
