@@ -1,6 +1,6 @@
-export const getTransactions = transactions => {
+export const setTransactions = transactions => {
 	return {
-		type: "GET_TRANSACTIONS",
+		type: "SET_TRANSACTIONS",
 		transactions
 	}
 }
@@ -16,6 +16,6 @@ export const fetchTransactions = accountId => {
 			}
 		})
 			.then(resp => resp.json())
-			.then(transactions => dispatch(getTransactions(transactions)))
+			.then(transactions => dispatch(setTransactions(transactions)))
 	}
 }

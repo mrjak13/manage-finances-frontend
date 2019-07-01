@@ -1,7 +1,7 @@
 export default (state = [], action) => {
 	switch (action.type) {
 		
-		case "GET_TRANSACTIONS":
+		case "SET_TRANSACTIONS":
 			return action.transactions
 
 		default:
