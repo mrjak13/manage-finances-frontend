@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setAccounts } from '../actions/accounts' 
 import Account from '../components/Account'
 import CardDeck from 'react-bootstrap/CardDeck'
+import AccountForm from '../components/AccountForm'
 
 class Accounts extends React.Component {
 
@@ -13,9 +14,13 @@ class Accounts extends React.Component {
 
 	render() {
 		return (
-			<CardDeck>
-				{ this.props.currentUser.attributes.accounts.map(account => <Account id={account.id} name={account.name} balance={account.balance}/>) }
-			</CardDeck>
+			<div>
+				<CardDeck>
+					{ this.props.currentUser.attributes.accounts.map(account => <Account id={account.id} name={account.name} balance={account.balance}/>) }
+				</CardDeck>
+
+				<AccountForm />
+			</div>
 		)
 	}
 }
