@@ -5,6 +5,13 @@ export const setAccounts = accounts => {
 	}
 }
 
+export const addAccount = account => {
+	return {
+		type: "ADD_ACCOUNT",
+		account
+	}
+}
+
 export const createAccount = (userId, account) => {
 	console.log("in createAccount action, account:", account, " and userId: ", userId)
 	return dispatch => {
@@ -17,6 +24,6 @@ export const createAccount = (userId, account) => {
 			body: JSON.stringify(account)
 		})
 		.then(resp => resp.json())
-		.then(console.log)
+		.then(account => dispatch(addAccount(account)))
 	}
 }
