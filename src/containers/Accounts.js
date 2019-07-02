@@ -2,11 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { setAccounts } from '../actions/accounts' 
 import Account from '../components/Account'
-import CardDeck from 'react-bootstrap/CardDeck'
-import AccountForm from '../components/AccountForm'
+import CardColumns from 'react-bootstrap/CardColumns'
+import Container from 'react-bootstrap/Container'
 
 class Accounts extends React.Component {
 
+// does not update to new list of accounts after creating a new one
+// need to adjust when to set accounts
 
 	componentDidMount() {
 		this.props.setAccounts(this.props.currentUser.attributes.accounts)
@@ -14,13 +16,11 @@ class Accounts extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<CardDeck>
-					{ this.props.currentUser.attributes.accounts.map(account => <Account id={account.id} name={account.name} balance={account.balance}/>) }
-				</CardDeck>
-
-				<AccountForm />
-			</div>
+			<Container>
+				<CardColumns>
+					{ this.props.accounts.map(account => <Account id={account.id} name={account.name} balance={account.balance}/>) }
+				</CardColumns>
+			</Container>
 		)
 	}
 }
