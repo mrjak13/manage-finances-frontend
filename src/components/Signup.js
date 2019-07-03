@@ -5,8 +5,9 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container'
 import { updateSignupForm } from '../actions/signupForm'
 import { clearSignupForm } from '../actions/signupForm'
+import { signupUser } from '../actions/currentUser'
 
-const Signup = ({updateSignupForm, clearSignupForm, signupFormData}) => {
+const Signup = ({ updateSignupForm, clearSignupForm, signupFormData, signupUser }) => {
 
 	const handleInputChange = event => {
 		const { name, value } = event.target
@@ -19,20 +20,21 @@ const Signup = ({updateSignupForm, clearSignupForm, signupFormData}) => {
 
 	const handleSubmit = event => {
 		event.preventDefault()
+		signupUser(signupFormData)
 		clearSignupForm()
 	}
 
 	return(
 		<Container>
 			<br></br><h4>Sign up</h4><br></br>
-			<Form>
+			<Form onSubmit={handleSubmit}>
 				<Form.Group controlId="singupName">
 				  <Form.Label>Name</Form.Label>
 				  <Form.Control value={signupFormData.name} onChange={handleInputChange} name="name" placeholder="Your Name Here" />
 				</Form.Group>
 				<Form.Group controlId="singupEmail">
 				  <Form.Label>Email address</Form.Label>
-				  <Form.Control value={signupFormData.email} onChange={handleInputChange} name="email" type="email" placeholder="Enter email" />
+				  <Form.Control value={signupFormData.email} onChange={handleInputChange} name="email" placeholder="Enter email" />
 				  {/*<Form.Text className="text-muted">
 				    We'll never share your email with anyone else.
 				  </Form.Text>*/}
@@ -56,4 +58,4 @@ const mapStateToProps =  state => {
 	}
 }
 
-export default connect(mapStateToProps, { updateSignupForm, clearSignupForm})(Signup)
+export default connect(mapStateToProps, { updateSignupForm, clearSignupForm, signupUser })(Signup)
