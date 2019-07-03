@@ -6,13 +6,15 @@ import loginForm from './reducers/loginForm'
 import accounts from './reducers/accounts'
 import transactions from './reducers/transactions'
 import accountForm from './reducers/accountForm'
+import signupForm from './reducers/signupForm'
 
 const reducer = combineReducers({
 	currentUser,
 	loginForm,
 	accounts,
 	transactions,
-	accountForm
+	accountForm,
+	signupForm
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
