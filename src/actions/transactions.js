@@ -16,6 +16,6 @@ export const fetchTransactions = accountId => {
 			}
 		})
 			.then(resp => resp.json())
-			.then(transactions => dispatch(setTransactions(transactions)))
+			.then(transactions => dispatch(setTransactions(transactions.data)))
 	}
 }

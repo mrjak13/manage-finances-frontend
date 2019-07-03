@@ -11,7 +11,7 @@ const NavBar = ({ currentUser }) => {
 
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-		  <Navbar.Brand>{ currentUser.data ? currentUser.data.attributes.name : "Manage Your Finances"}</Navbar.Brand>
+		  <Navbar.Brand>{ currentUser.id ? currentUser.attributes.name : "Manage Your Finances"}</Navbar.Brand>
 		  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 		  <Navbar.Collapse id="responsive-navbar-nav">
 		    <Nav className="mr-auto">
@@ -24,7 +24,7 @@ const NavBar = ({ currentUser }) => {
 		      </NavDropdown>
 		    </Nav>
 		    <Nav>
-		      { currentUser.data ? < Logout /> : < Login/> }
+		      { currentUser.id ? < Logout /> : < Login/> }
 		    </Nav>
 		  </Navbar.Collapse>
 		</Navbar>

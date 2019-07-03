@@ -27,7 +27,7 @@ class Accounts extends React.Component {
 
 const mapStateToProps = state => {
 	return {
-		currentUser: state.currentUser.data,
+		currentUser: state.currentUser,
 		accounts: state.accounts
 	}
 }

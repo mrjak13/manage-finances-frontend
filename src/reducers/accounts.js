@@ -1,5 +1,4 @@
 export default (state = [], action) => {
-	console.log(action)
 	switch (action.type) {
 		case "SET_ACCOUNTS":
 			return action.accounts
