@@ -22,7 +22,7 @@ export const login = credentials => {
 				if (user.error) {
 					alert(user.error)
  				} else {
- 					dispatch(setCurrentUser(user))
+ 					dispatch(setCurrentUser(user.data))
  				}
 			})
 			.catch()
@@ -43,7 +43,7 @@ export const getCurrentUser = () => {
 				if (user.error) {
 					alert(user.error)
  				} else {
- 					dispatch(setCurrentUser(user))
+ 					dispatch(setCurrentUser(user.data))
  				}
 			})
 			.catch()
@@ -61,6 +61,27 @@ export const logout = () => {
 			}
 		})
 		.then()
+	}
+}
+
+export const signupUser = user => {
+	console.log("in signupUser user: ", user)
+	const user_data = {
+		name: user.name,
+		email: user.email,
+		password_digest: user.password
+	}
+	return dispatch => {
+		return fetch("http://localhost:3005/api/v1/users", {
+			credentials: "include",
+			method: "POST",
+			headers: {
+				"Content-Type" : "application/json"
+			},
+			body: JSON.stringify(user)
+		})
+		.then(resp => resp.json())
+		.then(user => dispatch(setCurrentUser(user.data)))
 	}
 }
 
