@@ -1,6 +1,6 @@
 const initialState = {
 	name: "",
-	amount: 0,
+	amount: "",
 	action: "",
 	date: ""
 }
