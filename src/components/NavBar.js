@@ -18,7 +18,8 @@ const NavBar = ({ currentUser }) => {
 			    <Link className="nav-link" to="/" >Home</Link>
 			    <Link className="nav-link" to={"/accounts"} >My Accounts</Link>
 		      <Link className="nav-link" to={"/accounts/new"} >New Account</Link>
-		      <Link className="nav-link"to={"/signup"}>Sign up</Link>
+		      <Link className="nav-link"to={"/transactions/new"}>New Transaction</Link>
+ 		      <Link className="nav-link"to={"/signup"}>Sign up</Link>
 		      <NavDropdown title="Dropdown" id="basic-nav-dropdown">
 		        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
 		      </NavDropdown>

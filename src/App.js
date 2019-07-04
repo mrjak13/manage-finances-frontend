@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import Main from './containers/Main'
 import Accounts from './containers/Accounts'
 import AccountForm from './components/AccountForm'
+import TransactionForm from './components/TransactionForm'
 import Signup from './components/Signup'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
@@ -27,6 +28,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/accounts' component={Accounts} />
             <Route exact path='/accounts/new' component={AccountForm} />
+            <Route exact path='/transactions/new' component={TransactionForm} />
             <Route exact path='/signup' component={Signup} />
           </Switch>
  
