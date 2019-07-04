@@ -67,9 +67,11 @@ export const logout = () => {
 export const signupUser = user => {
 	console.log("in signupUser user: ", user)
 	const user_data = {
-		name: user.name,
-		email: user.email,
-		password_digest: user.password
+		user: {
+			name: user.name,
+			email: user.email,
+			password: user.password
+		}
 	}
 	return dispatch => {
 		return fetch("http://localhost:3005/api/v1/users", {
@@ -78,7 +80,7 @@ export const signupUser = user => {
 			headers: {
 				"Content-Type" : "application/json"
 			},
-			body: JSON.stringify(user)
+			body: JSON.stringify(user_data)
 		})
 		.then(resp => resp.json())
 		.then(user => dispatch(setCurrentUser(user.data)))
