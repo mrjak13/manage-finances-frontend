@@ -4,9 +4,3 @@ export const updateTransactionForm = formData => {
 		formData
 	}
 }
-
-export const clearTransactionForm = () => {
-	return {
-		type: "CLEAR_TRANSACTION_FORM"
-	}
-}

@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateTransactionForm } from '../actions/transactionForm'
-import { createAccount } from '../actions/accounts'
+import { createTransaction } from '../actions/transactions'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container'
 
-const AccountForm = ({ updateTransactionForm, clearAccountForm, transactionFormData, currentUser }) => {
+const AccountForm = ({ updateTransactionForm, transactionFormData, accounts, createTransaction }) => {
 
 	const handleInputChange = event => {
 		const { name, value } = event.target
@@ -19,9 +19,10 @@ const AccountForm = ({ updateTransactionForm, clearAccountForm, transactionFormD
 
 	const handleSubmit = event => {
 		event.preventDefault()
-		// createTransaction(currentUser.id, transactionFormData)
-		clearTransactionForm()
+		createTransaction(event.target.children[1].childNodes[1].value, transactionFormData)
 	}
+
+	const accountsOptions = () => accounts.map(account => <option value={account.id}>{account.name}</option>)
 
 	return(
 		<Container>
@@ -31,10 +32,20 @@ const AccountForm = ({ updateTransactionForm, clearAccountForm, transactionFormD
 				  <Form.Label>Name</Form.Label>
 				  <Form.Control onChange={handleInputChange} name="name" placeholder="Direct Deposit" />
 				</Form.Group>
-				<Form.Group controlId="exampleForm.ControlSelect1">
+
+				<Form.Group controlId="transactionFormAccount">
+			    <Form.Label>Account</Form.Label>
+			    <Form.Control as="select" name="account">
+			      <option></option>
+			    	{accountsOptions()}
+			    </Form.Control>
+			  </Form.Group>
+
+				<Form.Group controlId="transactionFormDepositOrWithdrawl">
 			    <Form.Label>Deposit or Withdrawl</Form.Label>
 			    <Form.Control as="select" onChange={handleInputChange} name="action">
-			      <option>Deposit</option>
+			      <option></option>
+ 			      <option>Deposit</option>
 			      <option>Withdrawl</option>
 			    </Form.Control>
 			  </Form.Group>
@@ -56,10 +67,10 @@ const AccountForm = ({ updateTransactionForm, clearAccountForm, transactionFormD
 
 const mapStateToProps = state => {
 	return {
-		currentUser: state.currentUser,
+		accounts: state.currentUser.attributes.accounts,
 		transactionFormData: state.transactionForm
 
 	}
 }
 
-export default connect(mapStateToProps, { updateTransactionForm, clearTransactionForm, creatTransaction })(AccountForm)
+export default connect(mapStateToProps, { updateTransactionForm, createTransaction })(AccountForm)
