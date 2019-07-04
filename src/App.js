@@ -1,7 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar'
 import Main from './containers/Main'
 import Accounts from './containers/Accounts'
 import AccountForm from './components/AccountForm'
@@ -10,7 +9,6 @@ import Signup from './components/Signup'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import { Route, Switch, withRouter, Link } from 'react-router-dom'
-import Container from 'react-bootstrap/Container'
 
 class App extends React.Component {
 
@@ -21,7 +19,8 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <NavBar />
+        
+        <Main />
 
           <br></br>
 

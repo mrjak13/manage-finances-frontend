@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Accounts from './Accounts'
+import SimpleNavBar from '../components/SimpleNavBar'
+import NavBar from '../components/NavBar'
 
 const Main = ({ currentUser }) => {
 	return (
 		<div>
-			{ currentUser.data ? <Accounts /> : "" }
+			{ currentUser.id ? <NavBar /> : <SimpleNavBar /> }
 		</div>
 	)
 }
