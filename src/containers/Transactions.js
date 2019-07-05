@@ -15,6 +15,8 @@ class Transactions extends React.Component {
 	render(){
 		return (
 			<Container>
+				<h2>Transactions</h2>
+				<br></br>
 				<CardColumns>
 					{this.renderTransactions()}
 				</CardColumns>

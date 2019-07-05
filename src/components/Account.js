@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchTransactions } from '../actions/transactions'
+import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 
 const Account = ({ id, name, balance, fetchTransactions }) => {
@@ -13,7 +14,7 @@ const Account = ({ id, name, balance, fetchTransactions }) => {
 			      Some quick example text to build on the card title and make up the bulk of
 			      the card's content.
 			    </Card.Text>*/}
-			    <Card.Link href="#" onClick={() => fetchTransactions(id)}>Get Transactions</Card.Link>
+			    <Link to={"/transactions"} onClick={() => fetchTransactions(id)}>Get Transactions</Link>
 			  </Card.Body>
 			</Card>
 	)
