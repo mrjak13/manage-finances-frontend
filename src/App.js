@@ -8,7 +8,7 @@ import TransactionForm from './components/TransactionForm'
 import Signup from './components/Signup'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
-import { Route, Switch, withRouter, Link } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 class App extends React.Component {
 
@@ -30,9 +30,6 @@ class App extends React.Component {
             <Route exact path='/transactions/new' component={TransactionForm} />
             <Route exact path='/signup' component={Signup} />
           </Switch>
- 
-          
-
       </div>
     );
   }

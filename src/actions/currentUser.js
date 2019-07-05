@@ -1,3 +1,6 @@
+import { setAccounts } from '../actions/accounts'
+import { setTransactions } from '../actions/transactions'
+
 export const setCurrentUser = user => {
 	return {
 		type: "SET_CURRENT_USER",
@@ -23,6 +26,7 @@ export const login = credentials => {
 					alert(user.error)
  				} else {
  					dispatch(setCurrentUser(user.data))
+ 					dispatch(setAccounts(user.data.attributes.accounts))
  				}
 			})
 			.catch()
@@ -44,6 +48,7 @@ export const getCurrentUser = () => {
 					alert(user.error)
  				} else {
  					dispatch(setCurrentUser(user.data))
+ 					dispatch(setAccounts(user.data.attributes.accounts))
  				}
 			})
 			.catch()
@@ -60,7 +65,10 @@ export const logout = () => {
 				"Content-Type" : "application/json"
 			}
 		})
-		.then()
+		.then(resp => {
+			dispatch(setAccounts([]))
+			dispatch(setTransactions([]))
+		})
 	}
 }
 
