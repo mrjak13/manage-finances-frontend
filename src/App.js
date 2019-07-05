@@ -5,6 +5,7 @@ import Main from './containers/Main'
 import Home from './containers/Home'
 import Accounts from './containers/Accounts'
 import AccountForm from './components/AccountForm'
+import Transactions from './containers/Transactions'
 import TransactionForm from './components/TransactionForm'
 import Signup from './components/Signup'
 import { connect } from 'react-redux'
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route exact path='/home' component={Home} />
             <Route exact path='/accounts' component={Accounts} />
             <Route exact path='/accounts/new' component={AccountForm} />
+            <Route exact path='/transactions' component={Transactions} />
             <Route exact path='/transactions/new' component={TransactionForm} />
             <Route exact path='/signup' component={Signup} />
           </Switch>

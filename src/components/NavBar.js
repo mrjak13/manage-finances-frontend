@@ -16,6 +16,9 @@ const NavBar = ({ currentUser }) => {
 		  <Navbar.Collapse id="responsive-navbar-nav">
 		    <Nav className="mr-auto">
 			    <Link className="nav-link" to="/home" >Home</Link>
+
+			    <Link className="nav-link" to={"/transactions"}>Get Transactions</Link>
+
 		      <NavDropdown title="Accounts" id="accounts-dropdown">
 				    <Link className="dropdown-item" to={"/accounts"} >My Accounts</Link>
 			      <Link className="dropdown-item" to={"/accounts/new"} >New Account</Link>
