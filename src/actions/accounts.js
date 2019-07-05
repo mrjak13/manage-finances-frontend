@@ -24,6 +24,13 @@ export const createAccount = (userId, account) => {
 			body: JSON.stringify(account)
 		})
 		.then(resp => resp.json())
-		.then(account => dispatch(addAccount(account)))
+		.then(account => {
+			if (account.errors) {
+				alert(account.errors)
+			} else {
+				dispatch(addAccount(account))
+				alert(`Successfully created Account: ${account.name}`)
+			}
+		})
 	}
 }

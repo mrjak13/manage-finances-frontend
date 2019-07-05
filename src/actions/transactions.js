@@ -32,7 +32,13 @@ export const createTransaction = (accountId, transaction) => {
 			body: JSON.stringify(transaction)
 		})
 		.then(resp => resp.json())
-		.then(transaction => console.log(transaction.data))
-		// .then(transaction => dispatch(addTransaction(transaction)))
+		.then(transaction => {
+			if (transaction.errors) {
+				alert(transaction.errors)
+			} else {
+				console.log(transaction)
+				alert(`Successfully created: ${transaction.data.attributes.name}`)
+			}
+		})
 	}
 }

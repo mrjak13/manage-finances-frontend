@@ -35,16 +35,12 @@ const Signup = ({ updateSignupForm, clearSignupForm, signupFormData, signupUser 
 				<Form.Group controlId="singupEmail">
 				  <Form.Label>Email address</Form.Label>
 				  <Form.Control value={signupFormData.email} onChange={handleInputChange} name="email" placeholder="Enter email" />
-				  {/*<Form.Text className="text-muted">
-				    We'll never share your email with anyone else.
-				  </Form.Text>*/}
 				</Form.Group>
-
 				<Form.Group controlId="signupPassword">
 				  <Form.Label>Password</Form.Label>
 				  <Form.Control value={signupFormData.password} onChange={handleInputChange} name="password" type="password" placeholder="Password" />
 				</Form.Group>
-				<Button variant="primary" type="submit">
+				<Button variant="dark" type="submit">
 				  Submit
 				</Button>
 			</Form>

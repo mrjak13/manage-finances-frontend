@@ -91,7 +91,14 @@ export const signupUser = user => {
 			body: JSON.stringify(user_data)
 		})
 		.then(resp => resp.json())
-		.then(user => dispatch(setCurrentUser(user.data)))
+		.then(user => {
+			if (user.errors) {
+				alert(user.errors)
+			} else {
+				dispatch(setCurrentUser(user.data))
+				alert("Sign up successful, you may now login!")
+			}
+		})
 	}
 }
 
