@@ -67,7 +67,7 @@ const AccountForm = ({ updateTransactionForm, transactionFormData, accounts, cre
 
 const mapStateToProps = state => {
 	return {
-		accounts: state.currentUser.attributes.accounts,
+		accounts: state.accounts,
 		transactionFormData: state.transactionForm
 
 	}
