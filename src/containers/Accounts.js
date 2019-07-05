@@ -6,9 +6,6 @@ import Container from 'react-bootstrap/Container'
 
 class Accounts extends React.Component {
 
-	componentDidMount() {
-	}
-
 	render() {
 		return (
 			<Container>

@@ -13,7 +13,7 @@ const SimpleNavBar = ({ currentUser }) => {
 		  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 		  <Navbar.Collapse id="responsive-navbar-nav">
 		    <Nav className="mr-auto">
-			    <Link className="nav-link" to="/" >Home</Link>
+			    <Link className="nav-link" to="/home" >Home</Link>
 		    </Nav>
 		    <Nav>
  		      <Link className="nav-link"to={"/signup"}>Sign up</Link>

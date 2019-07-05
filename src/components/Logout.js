@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Logout = ({ logout }) => {
 
 	return (
-		<Link className="btn btn-outline-danger" to={"/"} onClick={logout}>Log Out</Link>
+		<Link className="btn btn-outline-danger" to={"/home"} onClick={logout}>Log Out</Link>
 	)
 }
 

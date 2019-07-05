@@ -15,7 +15,7 @@ const NavBar = ({ currentUser }) => {
 		  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 		  <Navbar.Collapse id="responsive-navbar-nav">
 		    <Nav className="mr-auto">
-			    <Link className="nav-link" to="/" >Home</Link>
+			    <Link className="nav-link" to="/home" >Home</Link>
 		      <NavDropdown title="Accounts" id="accounts-dropdown">
 				    <Link className="dropdown-item" to={"/accounts"} >My Accounts</Link>
 			      <Link className="dropdown-item" to={"/accounts/new"} >New Account</Link>
