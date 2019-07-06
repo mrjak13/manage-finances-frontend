@@ -1,3 +1,5 @@
+import { getCurrentUser } from './currentUser'
+
 export const setTransactions = transactions => {
 	return {
 		type: "SET_TRANSACTIONS",
@@ -36,7 +38,7 @@ export const createTransaction = (accountId, transaction) => {
 			if (transaction.errors) {
 				alert(transaction.errors)
 			} else {
-				console.log(transaction)
+				dispatch(getCurrentUser())
 				alert(`Successfully created: ${transaction.data.attributes.name}`)
 			}
 		})
