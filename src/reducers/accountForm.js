@@ -1,6 +1,6 @@
 const initialState = {
 	name: "",
-	balance: ""
+	balance: 0
 }
 
 export default (state = initialState, action) => {
