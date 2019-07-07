@@ -79,23 +79,3 @@ const mapStateToProps = ({ currentUser }) => {
 }
 
 export default connect(mapStateToProps, { getCurrentUser })(App)
-
-          // <Route path='/accounts/new' component={AccountForm} />
-          // <Route exact path='/transactions' component={Transactions} />
-          // <Route exact path='/transactions/new' component={TransactionForm} />
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
