@@ -31,7 +31,7 @@ class App extends React.Component {
             this.props.currentUser.id ? (
                 <Accounts />
               ) : (
-                <Redirect to="/home" />
+                <Home />
               )
           )}/>
 
@@ -39,7 +39,7 @@ class App extends React.Component {
             this.props.currentUser.id ? (
                 <AccountForm />
               ) : (
-                <Redirect to="/home" />
+                <Home />
               )
           )}/>
 
@@ -47,7 +47,7 @@ class App extends React.Component {
             this.props.currentUser.id ? (
                 <Transactions />
               ) : (
-                <Redirect to="/home" />
+                <Home />
               )
           )}/>
 
@@ -55,13 +55,13 @@ class App extends React.Component {
             this.props.currentUser.id ? (
                 <TransactionForm />
               ) : (
-                <Redirect to="/home" />
+               <Home />
               )
           )}/>
 
           <Route exact path='/signup' render={() => (
             this.props.currentUser.id ? (
-                <Redirect to="/home" />
+                <Home />
               ) : (
                 <Signup />
               )
