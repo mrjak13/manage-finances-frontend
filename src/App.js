@@ -10,7 +10,7 @@ import TransactionForm from './components/TransactionForm'
 import Signup from './components/Signup'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
 
 class App extends React.Component {
 
@@ -21,19 +21,52 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        
         <Main />
+        <br></br>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/home' component={Home} />
 
-          <br></br>
+          <Route exact path='/accounts' render={() => (
+            this.props.currentUser.id ? (
+                <Accounts />
+              ) : (
+                <Redirect to="/home" />
+              )
+          )}/>
 
-          <Switch>
-            <Route exact path='/home' component={Home} />
-            <Route exact path='/accounts' component={Accounts} />
-            <Route exact path='/accounts/new' component={AccountForm} />
-            <Route exact path='/transactions' component={Transactions} />
-            <Route exact path='/transactions/new' component={TransactionForm} />
-            <Route exact path='/signup' component={Signup} />
-          </Switch>
+          <Route exact path='/accounts/new' render={() => (
+            this.props.currentUser.id ? (
+                <AccountForm />
+              ) : (
+                <Redirect to="/home" />
+              )
+          )}/>
+
+          <Route exact path='/transactions' render={() => (
+            this.props.currentUser.id ? (
+                <Transactions />
+              ) : (
+                <Redirect to="/home" />
+              )
+          )}/>
+
+          <Route exact path='/transactions/new' render={() => (
+            this.props.currentUser.id ? (
+                <TransactionForm />
+              ) : (
+                <Redirect to="/home" />
+              )
+          )}/>
+
+          <Route exact path='/signup' render={() => (
+            this.props.currentUser.id ? (
+                <Redirect to="/home" />
+              ) : (
+                <Signup />
+              )
+          )}/>
+        </Switch>
       </div>
     );
   }
@@ -46,6 +79,10 @@ const mapStateToProps = ({ currentUser }) => {
 }
 
 export default connect(mapStateToProps, { getCurrentUser })(App)
+
+          // <Route path='/accounts/new' component={AccountForm} />
+          // <Route exact path='/transactions' component={Transactions} />
+          // <Route exact path='/transactions/new' component={TransactionForm} />
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
