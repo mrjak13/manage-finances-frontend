@@ -1,4 +1,5 @@
 import { getCurrentUser } from './currentUser'
+import { clearTransactionForm } from './transactionForm'
 
 export const setTransactions = transactions => {
 	return {
@@ -39,6 +40,7 @@ export const createTransaction = (accountId, transaction) => {
 				alert(transaction.errors)
 			} else {
 				dispatch(getCurrentUser())
+				dispatch(clearTransactionForm())
 				alert(`Successfully created: ${transaction.data.attributes.name}`)
 			}
 		})

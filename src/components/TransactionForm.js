@@ -30,7 +30,7 @@ const AccountForm = ({ updateTransactionForm, transactionFormData, accounts, cre
 			<Form onSubmit={handleSubmit}>
 				<Form.Group controlId="transactionFormName">
 				  <Form.Label>Name</Form.Label>
-				  <Form.Control onChange={handleInputChange} name="name" placeholder="Direct Deposit" />
+				  <Form.Control value={transactionFormData.name} onChange={handleInputChange} name="name" placeholder="Direct Deposit" />
 				</Form.Group>
 
 				<Form.Group controlId="transactionFormAccount">
@@ -43,7 +43,7 @@ const AccountForm = ({ updateTransactionForm, transactionFormData, accounts, cre
 
 				<Form.Group controlId="transactionFormDepositOrWithdrawl">
 			    <Form.Label>Deposit or Withdrawl</Form.Label>
-			    <Form.Control as="select" onChange={handleInputChange} name="action">
+			    <Form.Control value={transactionFormData.action} as="select" onChange={handleInputChange} name="action">
 			      <option></option>
  			      <option>Deposit</option>
 			      <option>Withdrawl</option>
@@ -51,11 +51,11 @@ const AccountForm = ({ updateTransactionForm, transactionFormData, accounts, cre
 			  </Form.Group>
 				<Form.Group controlId="transactionFormAmount">
 				  <Form.Label>Amount</Form.Label>
-				  <Form.Control type="number" step="0.01" onChange={handleInputChange} name="amount" placeholder="0.00" />
+				  <Form.Control value={transactionFormData.amount} type="number" step="0.01" onChange={handleInputChange} name="amount" placeholder="0.00" />
 				</Form.Group>
 				<Form.Group controlId="transactionFormDate">
 				  <Form.Label>Date</Form.Label>
-				  <Form.Control type="date" onChange={handleInputChange} name="date" placeholder="0.00" />
+				  <Form.Control value={transactionFormData.date} type="date" onChange={handleInputChange} name="date" />
 				</Form.Group>
 				<Button variant="primary" type="submit">
 				  Submit

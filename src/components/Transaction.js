@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import Card from 'react-bootstrap/Card'
 import Fade from 'react-reveal/Fade';
 
@@ -21,4 +20,4 @@ const Transaction = ({ id, name, amount, action, date }) => {
 	)
 }
 
-export default connect(null, {})(Transaction)
+export default Transaction
