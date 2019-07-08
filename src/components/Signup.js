@@ -4,10 +4,9 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container'
 import { updateSignupForm } from '../actions/signupForm'
-import { clearSignupForm } from '../actions/signupForm'
 import { signupUser } from '../actions/currentUser'
 
-const Signup = ({ updateSignupForm, clearSignupForm, signupFormData, signupUser }) => {
+const Signup = ({ updateSignupForm, signupFormData, signupUser }) => {
 
 	const handleInputChange = event => {
 		const { name, value } = event.target
@@ -21,7 +20,6 @@ const Signup = ({ updateSignupForm, clearSignupForm, signupFormData, signupUser 
 	const handleSubmit = event => {
 		event.preventDefault()
 		signupUser(signupFormData)
-		clearSignupForm()
 	}
 
 	return(
@@ -54,4 +52,4 @@ const mapStateToProps =  state => {
 	}
 }
 
-export default connect(mapStateToProps, { updateSignupForm, clearSignupForm, signupUser })(Signup)
+export default connect(mapStateToProps, { updateSignupForm, signupUser })(Signup)

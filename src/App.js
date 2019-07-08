@@ -10,7 +10,7 @@ import TransactionForm from './components/TransactionForm'
 import Signup from './components/Signup'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
 
