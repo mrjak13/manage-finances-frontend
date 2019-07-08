@@ -5,7 +5,6 @@ export default (state = [], action) => {
 		case "ADD_ACCOUNT":
 			return state.concat(action.account)
 		case "REMOVE_ACCOUNT":
-			console.log("in REMOVE_ACCOUNT")
 			return state.filter(account => account.id !== action.id)
 		default:
 			return state
