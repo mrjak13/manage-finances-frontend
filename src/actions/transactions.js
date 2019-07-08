@@ -8,6 +8,13 @@ export const setTransactions = transactions => {
 	}
 }
 
+export const removeTransaction = id => {
+	return {
+		type: "REMOVE_TRANSACTION",
+		id
+	}
+}
+
 export const fetchTransactions = accountId => {
 	console.log(accountId)
 	return dispatch => {
@@ -43,6 +50,24 @@ export const createTransaction = (accountId, transaction) => {
 				dispatch(clearTransactionForm())
 				alert(`Successfully created: ${transaction.data.attributes.name}`)
 			}
+		})
+	}
+}
+
+export const deleteTransaction = (id) => {
+	return dispatch => {
+		fetch(`http://localhost:3005/api/v1/transactions/${id}`, {
+			credentials: "include",
+			method: "DELETE",
+			headers: {
+				"Content-Type" : "application/json"
+			}
+		})
+		.then(resp => resp.json())
+		.then(user => {
+			dispatch(removeTransaction(id))
+			dispatch(getCurrentUser(user.data))
+			alert("Transaction Destroyed")
 		})
 	}
 }
