@@ -1,5 +1,7 @@
-import { setAccounts } from '../actions/accounts'
-import { setTransactions } from '../actions/transactions'
+import { setAccounts } from './accounts'
+import { setTransactions } from './transactions'
+import { clearLoginForm } from './loginForm'
+import { clearSignupForm } from './signupForm'
 
 export const setCurrentUser = user => {
 	return {
@@ -9,8 +11,6 @@ export const setCurrentUser = user => {
 }
 
 export const login = credentials => {
-	console.log("credentials are: ", credentials)
-
 	return dispatch => {
 		return fetch("http://localhost:3005/api/v1/login", {
 			credentials: "include",
@@ -27,6 +27,7 @@ export const login = credentials => {
  				} else {
  					dispatch(setCurrentUser(user.data))
  					dispatch(setAccounts(user.data.attributes.accounts))
+ 					dispatch(clearLoginForm())
  				}
 			})
 			.catch()
@@ -96,18 +97,9 @@ export const signupUser = user => {
 				alert(user.errors)
 			} else {
 				dispatch(setCurrentUser(user.data))
-				alert("Sign up successful, you may now login!")
+				dispatch(clearSignupForm())
+				alert("Sign up successful")
 			}
 		})
-	}
-}
-
-
-export const test = stuff => {
-	console.log("credentials are: ", stuff)
-	return dispatch => {
-		return fetch("http://localhost:3005/api/v1/users")
-		.then(res => res.json())
-		.then(console.log)
 	}
 }
