@@ -4,3 +4,9 @@ export const updateAccountForm = formData => {
 		formData
 	}
 }
+
+export const clearAccountForm = () => {
+	return {
+		type: "CLEAR_ACCOUNT_FORM"
+	}
+}

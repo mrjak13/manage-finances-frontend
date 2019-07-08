@@ -20,10 +20,6 @@ const AccountForm = ({ updateAccountForm, accountFormData, createAccount, curren
 	const handleSubmit = event => {
 		event.preventDefault()
 		createAccount(currentUser.id, accountFormData)
-		updateAccountForm({
-			name: "",
-			balance: 0
-		})
 	}
 
 	return(

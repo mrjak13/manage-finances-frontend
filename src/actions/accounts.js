@@ -1,3 +1,5 @@
+import { clearAccountForm } from './accountForm'
+
 export const setAccounts = accounts => {
 	return {
 		type: "SET_ACCOUNTS",
@@ -29,6 +31,7 @@ export const createAccount = (userId, account) => {
 				alert(account.errors)
 			} else {
 				dispatch(addAccount(account))
+				dispatch(clearAccountForm())
 				alert(`Successfully created Account: ${account.name}`)
 			}
 		})
