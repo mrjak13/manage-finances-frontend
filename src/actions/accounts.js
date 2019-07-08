@@ -14,8 +14,15 @@ export const addAccount = account => {
 	}
 }
 
+export const removeAccount = id => {
+	console.log("in removeAccount action creator id", id)
+	return	{
+		type: "REMOVE_ACCOUNT",
+		id
+	}
+}
+
 export const createAccount = (userId, account) => {
-	console.log("in createAccount action, account:", account, " and userId: ", userId)
 	return dispatch => {
 		return fetch(`http://localhost:3005/api/v1/users/${userId}/accounts`, {
 			credentials: "include",
@@ -35,5 +42,21 @@ export const createAccount = (userId, account) => {
 				alert(`Successfully created Account: ${account.name}`)
 			}
 		})
+	}
+}
+
+export const deleteAccount = (id) => {
+	console.log("in deleteAccount id:", id)
+	return dispatch => {
+		dispatch(removeAccount(id))
+		return fetch(`http://localhost:3005/api/v1/accounts/${id}`, {
+			credentials: "include",
+			method: "DELETE",
+			headers: {
+				"Content-Type" : "application/json"
+			}
+		})
+		.then(alert(`Account Destroyed`)
+		)
 	}
 }
