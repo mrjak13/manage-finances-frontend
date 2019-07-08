@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Card from 'react-bootstrap/Card'
+import Fade from 'react-reveal/Fade';
 
 
 const Transaction = ({ id, name, amount, action, date }) => {
 	return (
-			<Card style={{ width: '18rem' }}>
+		
+		<Fade>
+			<Card style={{ width: '14rem' }}>
 		    <Card.Header>{ name }</Card.Header>
 			  <Card.Body>
 			  	<Card.Title className={(action === "Withdrawl" ? "text-danger" : "")}>${amount}</Card.Title>
@@ -13,6 +16,8 @@ const Transaction = ({ id, name, amount, action, date }) => {
 			    <Card.Subtitle className="mb-2 text-muted">Transaction ID: {id}</Card.Subtitle>
 			  </Card.Body>
 			</Card>
+		</Fade>
+		
 	)
 }
 
