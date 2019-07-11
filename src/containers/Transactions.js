@@ -32,4 +32,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Transactions)
-					// {this.props.transactions.map(transaction => <Transaction name={transaction.attributes.name} amount={transaction.attributes.amount} action={transaction.attributes.action} date={transaction.attributes.date}/>)}
