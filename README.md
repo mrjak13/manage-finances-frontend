@@ -1,5 +1,3 @@
-Rails Backend at https://github.com/mrjak13/manage-finances-backend
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
