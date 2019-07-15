@@ -1,6 +1,6 @@
 # Manage Your Finances
 
-Welcome to manage your finances!  Here you can manage your digital check book or track how much your spending. Enjoy!
+Welcome to manage your finances!  Here you can manage your digital check book or track how much you're spending. Enjoy!
 
 ## Getting Started
 
