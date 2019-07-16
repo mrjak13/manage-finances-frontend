@@ -31,7 +31,6 @@ export const fetchTransactions = accountId => {
 }
 
 export const createTransaction = (accountId, transaction) => {
-	console.log("in createtTransaction action, transaction:", transaction, " and accountId: ", accountId)
 	return dispatch => {
 		return fetch(`http://localhost:3005/api/v1/accounts/${accountId}/transactions`, {
 			credentials: "include",

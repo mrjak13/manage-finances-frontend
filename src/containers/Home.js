@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import NewForm from '../components/NewForm'
 
 
 const Home = (props) => {
@@ -13,6 +14,7 @@ const Home = (props) => {
 		      Here you can easily track your expenses and monitor your savings accross multiple accounts.
 		    </p>
 		  </Container>
+		  <NewForm />
 		</Jumbotron>
 	)
 }
