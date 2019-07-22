@@ -4,7 +4,7 @@ Welcome to manage your finances!  Here you can manage your digital check book or
 
 ## Getting Started
 
-This app requires the [Rails Backend](https://github.com/mrjak13/manage-finances-backend) to be running.  Once that is up, start the React applications.
+This app requires the [Rails API](https://github.com/mrjak13/manage-finances-backend) to be running.  Once that is up, start the React applications.
 
 ### Prerequisites
 
