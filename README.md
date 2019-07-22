@@ -29,6 +29,10 @@ sign up and start managing your finances!
 * [React Bootstrap](https://react-bootstrap.github.io/) - CSS Library
 * [React Reveal](https://www.react-reveal.com/) - Animation Library
 
+## Demo
+
+Check out a short [demo](https://drive.google.com/file/d/1c_rMQ8wD-WrRT8_zXZmbKYTbjU6itmta/view?usp=sharing) here!
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
