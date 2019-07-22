@@ -1,3 +1,4 @@
+// Added for live coding session
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Comments from '../containers/Comments'

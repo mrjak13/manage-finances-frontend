@@ -31,8 +31,4 @@ sign up and start managing your finances!
 
 ## License
 
-<<<<<<< HEAD
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-=======
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
->>>>>>> c0b769d7089d041bbfa7970ffb7135e9f921f759

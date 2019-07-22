@@ -1,3 +1,4 @@
+// Added for live coding session
 import React from 'react'
 
 const Comment = props => {

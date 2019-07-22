@@ -14,7 +14,8 @@ const Home = (props) => {
 		      Here you can easily track your expenses and monitor your savings accross multiple accounts.
 		    </p>
 		  </Container>
-		  <NewForm />
+
+		  {/* added for live coding session <NewForm />*/}
 		</Jumbotron>
 	)
 }
